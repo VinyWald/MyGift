@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pra ti amore</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;700&display=swap');
+
+        html,
+        body {
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #141414;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-title {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .swiper-slide-shadow-cards {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* Estilo para a bolinha ativa da paginação do carrossel */
+        .swiper-pagination-bullet-active {
+            background-color: #ef4444 !important;
+            /* Cor vermelha para combinar com o tema */
+        }
+
+        .swiper-pagination-bullet {
+            background-color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<body class="text-white overflow-x-hidden">
+
+    <div id="initial-popup"
+        class="fixed top-0 left-0 w-full h-full bg-black/90 backdrop-blur-sm z-50 flex flex-col items-center justify-center p-4">
+        <div class="text-center text-white">
+            <h2 class="font-title text-4xl md:text-5xl font-bold mb-4">Um Presente Pra Vc, Minha foquinha Pfta!</h2>
+            <p class="text-lg mb-6">Vc merece muito mais que isso, mas no momento foi o que pude lhe dar, fiz com muito
+                carinho, espero que goste!</p>
+        </div>
+        <div class="rounded-full overflow-hidden shadow-lg border-2 border-red-500 mb-6">
+            <img src="/images/VHP.gif" alt="foca" class="w-48 h-48 object-cover">
+        </div>
+        <button id="open-button"
+            class="bg-red-600 hover:bg-red-700 transition-all duration-300 text-white font-title text-2xl font-semibold py-3 px-8 rounded-full shadow-lg shadow-red-900/50 active:scale-95 transform">
+            Abrir
+        </button>
+    </div>
+
+    <div id="hearts-container" class="fixed top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+    </div>
+
+    <div id="main-page" class="hidden relative z-10 flex flex-col items-center p-4 md:p-8 min-h-screen justify-center">
+
+        <div
+            class="flex flex-col items-center bg-black/50 rounded-2xl p-6 md:p-8 backdrop-blur-md border border-zinc-800 w-full max-w-xl">
+
+            <div class="w-full max-w-md md:max-w-lg h-[400px] md:h-[500px] mb-8 mx-auto">
+                <div class="swiper mySwiper h-full">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide rounded-lg overflow-hidden">
+                            <img src="images/6_4_suprema.jpeg" alt="Foto 1"
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="swiper-slide rounded-lg overflow-hidden">
+                            <img src="images/15_2_cachu.jpeg" alt="Foto 2"
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="swiper-slide rounded-lg overflow-hidden">
+                            <img src="images/28_03_relicas.jpeg" alt="Foto 3"
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="swiper-slide rounded-lg overflow-hidden">
+                            <img src="images/24_05_cachu2.jpeg" alt="Foto 4"
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="swiper-slide rounded-lg overflow-hidden">
+                            <img src="images/carna3.jpeg" alt="Foto 5" class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h1 class="font-title text-5xl md:text-6xl font-bold text-red-500">Viny & Bia</h1>
+                <div class="text-gray-300 mt-4 max-w-xl mx-auto">
+                    <p>A Enciclopédia Galáctica define o amor como algo incrivelmente complicado de se explicar.</p>
+                    <p>Já o Guia do Mochileiro das Galáxias define amor como: geralmente doloroso, se puder, evite-o.
+                        Mas para a sorte dos terráqueos, eles nunca leram o Guia do Mochileiro das Galáxias.</p>
+                    <p class="mt-2"><strong>Enciclopédia Galáctica, Guia do Mochileiro das Galáxias</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center w-full max-w-3xl">
+            <p class="font-title text-3xl font-semibold">Compartilhando momentos há</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 mt-6">
+                <div class="bg-black/50 p-4 rounded-xl backdrop-blur-sm">
+                    <h2 id="anos" class="text-2xl font-bold">0</h2>
+                    <p class="text-sm text-neutral-300">anos</p>
+                </div>
+                <div class="bg-black/50 p-4 rounded-xl backdrop-blur-sm">
+                    <h2 id="meses" class="text-2xl font-bold">0</h2>
+                    <p class="text-sm text-neutral-300">meses</p>
+                </div>
+                <div class="bg-black/50 p-4 rounded-xl backdrop-blur-sm">
+                    <h2 id="dias" class="text-2xl font-bold">0</h2>
+                    <p class="text-sm text-neutral-300">dias</p>
+                </div>
+                <div class="bg-black/50 p-4 rounded-xl backdrop-blur-sm">
+                    <h2 id="horas" class="text-2xl font-bold">0</h2>
+                    <p class="text-sm text-neutral-300">horas</p>
+                </div>
+                <div class="bg-black/50 p-4 rounded-xl backdrop-blur-sm">
+                    <h2 id="minutos" class="text-2xl font-bold">0</h2>
+                    <p class="text-sm text-neutral-300">minutos</p>
+                </div>
+                <div class="bg-black/50 p-4 rounded-xl backdrop-blur-sm">
+                    <h2 id="segundos" class="text-2xl font-bold">0</h2>
+                    <p class="text-sm text-neutral-300">segundos</p>
+                </div>
+            </div>
+            <p id="data-inicio-texto" class="text-sm font-semibold opacity-60 mt-6"></p>
+        </div>
+
+        <button id="open-calendar-btn"
+            class="mt-12 bg-red-600 hover:bg-red-700 transition-all duration-300 text-white font-title text-3xl font-semibold py-3 px-8 rounded-full shadow-lg shadow-red-900/50 active:scale-95 transform">
+            Ver Nossas Memórias
+        </button>
+    </div>
+
+    <div id="music-player"
+        class="hidden sticky bottom-0 left-0 w-full bg-black/70 backdrop-blur-md border-t border-neutral-800 p-4 z-20">
+        <div class="container mx-auto flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <button id="play-pause-btn" class="bg-red-600 p-3 rounded-full hover:bg-red-500 transition-colors"><svg
+                        id="play-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor" class="hidden">
+                        <path d="M8 5v14l11-7z" />
+                    </svg><svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                    </svg></button>
+                <div>
+                    <h3 class="font-medium text-sm">Nossa Música</h3>
+                    <p class="text-xs text-neutral-400">Artista Favorito</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="calendar-view"
+        class="hidden fixed inset-0 w-full h-full bg-black/80 backdrop-blur-lg z-50 flex items-center justify-center p-4 overflow-auto">
+        <div class="relative w-full max-w-md">
+            <h2 class="font-title text-6xl font-bold text-center text-red-500 mb-1">Memórias</h2>
+            <p class="text-center text-zinc-400 text-sm mb-6">Cada dia que eu passo ao seu lado é uma memória importante
+                para mim, aqui são algumas dela:</p>
+
+            <div
+                class="rounded-2xl backdrop-blur-md bg-black/50 shadow-xl shadow-black/20 border border-white/5 overflow-hidden transition-all duration-300">
+                <div class="flex items-center gap-2 justify-between p-4 border-b border-white/5">
+                    <button id="prev-month-btn"
+                        class="text-white bg-black/40 hover:bg-red-900/30 h-10 w-10 rounded-full transition-transform duration-200 flex items-center justify-center active:scale-95"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="h-5 w-5">
+                            <path d="m15 18-6-6 6-6"></path>
+                        </svg></button>
+                    <div class="flex gap-2 items-center">
+                        <select id="month-select"
+                            class="h-10 bg-black/60 text-md border-white/10 border px-3 rounded-xl font-semibold capitalize text-center cursor-pointer"></select>
+                        <select id="year-select"
+                            class="h-10 bg-black/60 text-md border-white/10 border px-3 rounded-xl font-semibold text-center cursor-pointer"></select>
+                    </div>
+                    <button id="next-month-btn"
+                        class="text-white bg-black/40 hover:bg-red-900/30 h-10 w-10 rounded-full transition-transform duration-200 flex items-center justify-center active:scale-95"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="h-5 w-5">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg></button>
+                </div>
+                <div class="p-5">
+                    <div class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-neutral-300 mb-3">
+                        <div>Dom</div>
+                        <div>Seg</div>
+                        <div>Ter</div>
+                        <div>Qua</div>
+                        <div>Qui</div>
+                        <div>Sex</div>
+                        <div>Sab</div>
+                    </div>
+                    <div id="calendar-grid" class="grid grid-cols-7 gap-2"></div>
+                </div>
+            </div>
+            <button id="close-calendar-btn"
+                class="mt-4 w-full bg-red-600/80 hover:bg-red-600 text-white font-title text-3xl font-semibold py-2 px-4 rounded-xl transition-all duration-200 active:scale-95 transform">Fechar</button>
+        </div>
+    </div>
+
+    <div id="memory-modal"
+        class="hidden fixed inset-0 w-full h-full bg-black/80 backdrop-blur-xl z-50 flex items-center justify-center p-4">
+        <div class="relative w-full max-w-md bg-zinc-900 border border-zinc-700 rounded-2xl shadow-2xl p-6 text-center">
+            <button id="close-memory-btn"
+                class="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors">×</button>
+            <img id="memory-image" src="" alt="Foto da memória" class="w-full rounded-lg mb-4">
+            <h3 id="memory-title" class="font-title text-3xl font-bold text-red-500 mb-2"></h3>
+            <p id="memory-date" class="text-sm text-zinc-400 mb-4"></p>
+            <p id="memory-description" class="text-zinc-300"></p>
+        </div>
+    </div>
+
+    <div id="youtube-player" class="hidden"></div>
+
+    <script>
+        // --- CONFIGURAÇÕES GERAIS ---
+        const startDate = new Date(2025, 2, 15); // Mês 8 é Setembro (0-11)
+        const youtubeVideoId = 'PrxmEhpO11I';
+        const musicTitle = "Musíca que me lembra você";
+        const musicArtist = "Wifiskeleton";
+
+        const memories = {
+            '2024-09-07': { title: 'Onde Tudo Começou', description: 'O dia em que essa paulistinha atacou o garoto de programa, ainda bem que fui atacado.', image: 'images/07_09_inicio.jpeg' },
+            '2024-11-24': { title: 'Fomos ao inferno e voltamos', description: 'Primeiro role que meu amorzinho aceita ir cmg, o completo submundo, sobrevivemos (só nesse dia ela me passou o zaps).', image: 'images/mim.jpeg' },
+            '2024-12-08': { title: 'Ousada', description: 'Mal tinhamos saído e ela já postou foto nossa no status, muito ousada.', image: 'images/8_12_foto_mercado.jpeg' },
+            '2024-12-30': { title: 'Boiolamos', description: 'Num final de noite qualquer, boiolamos pela primeira vez, a primeira de muitas que viriam.', image: 'images/boiolei.jpeg' },
+            '2025-02-15': { title: 'Cachu', description: 'Primeira vez na cachoeira sozinhos, foi onde conhecemos nossos manos peixes, o Diego. Foi um dia que nunca vou me esquecer com vc.', image: 'images/15_2_cachu.jpeg' },
+            '2025-02-28': { title: 'Carnaval', description: 'Incio do primeiro carnaval juntos, muito gutgut.', image: 'images/carna1.jpeg' },
+            '2025-03-01': { title: 'Carnaval', description: 'Saimos bem princesas nesse dia, voce conheceu o Fael, muito bueno.', image: 'images/carna2.jpeg' },
+            '2025-03-02': { title: 'Carnaval', description: 'Esse dia saimos bem bonitinhos, voce com sua tiara piscante e eu com a blusa da Patystronda.', image: 'images/carna3.jpeg' },
+            '2025-03-03': { title: 'Role em familia', description: 'Nesse dia vc conheceu um pouco da minha familia, foi um dia muito importante pra mim.', image: 'images/3_3_role_familia.jpeg' },
+            '2025-03-04': { title: 'Assumidos no Insta', description: 'Postamos nossa fotinha juntos no insta bem casal vibes, um novo nivel de assumirmos.', image: 'images/4_3_fotinha_insta.jpeg' },
+            '2025-03-28': { title: 'Uma bela noite', description: 'A gente tava muito lindo esse dia, conhecemos a Marcia e curtimos o timão campeão.', image: 'images/28_03_relicas.jpeg' },
+            '2025-03-30': { title: 'Mim ama', description: 'Saindo de casa num fim de tarde, indo pro basket, em frente ao Cordeiro vc me disse te amo pela primeira vez, nunca vou esquecer dessa cena.', image: 'images/boiolei.jpeg' },
+            '2025-04-06': { title: 'Role da Suprema', description: 'Rolezinho juntos, o qual me gerou uma das fotos que eu mais gosto nossa, e a minha tambem.', image: 'images/6_4_suprema.jpeg' },
+            '2025-04-17': { title: 'Cria in roça', description: 'Levei vc pra conhecer uma roça de vdd, cada dia lá foi pfto em muitos aspectos.', image: 'images/17_04_roca.jpeg' },
+            '2025-04-21': { title: 'A foto', description: 'Sem sombras de duvidas a foto que mais representa o que me faz feliz, estar rodeados das pessoas que eu amo, e todos sorrindo.', image: 'images/21_04_fotinha.jpeg' },
+            '2025-05-24': { title: 'Cachu2', description: 'Mais uma aventura com meu benzinho, qualquer distancia com vc do lado fica facil e agradavel.', image: 'images/24_05_cachu2.jpeg' },
+            '2025-05-30': { title: 'Casal Maromba', description: 'Voce finalmente animou ir na academia cmg, minha melhor companhia.', image: 'images/30_05_acad.jpeg' },
+            '2025-06-08': { title: 'Fim de semana', description: 'Um final de semana que apesar de tudo, foi muito bom e meu bem se tornou uma pesquisadora de direito da UEMG, braba.', image: 'images/8_6_role.jpeg' },
+
+        };
+
+        // --- SCRIPTS DA PÁGINA ---
+        document.querySelector('#music-player h3').textContent = musicTitle;
+        document.querySelector('#music-player p').textContent = musicArtist;
+
+        new Swiper(".mySwiper", {
+            effect: "cards",
+            grabCursor: true,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        function updateCountdown() {
+            document.getElementById('data-inicio-texto').innerText = `Oficialmente minha patroa desde ${startDate.toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}`;
+            const now = new Date();
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+            if (days < 0) { months--; days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
+            if (months < 0) { years--; months += 12; }
+            const diffTime = now - startDate;
+            const s = Math.floor(diffTime / 1000) % 60;
+            const m = Math.floor(diffTime / (1000 * 60)) % 60;
+            const h = Math.floor(diffTime / (1000 * 60 * 60)) % 24;
+            document.getElementById('anos').innerText = String(years).padStart(2, '0');
+            document.getElementById('meses').innerText = String(months).padStart(2, '0');
+            document.getElementById('dias').innerText = String(days).padStart(2, '0');
+            document.getElementById('horas').innerText = String(h).padStart(2, '0');
+            document.getElementById('minutos').innerText = String(m).padStart(2, '0');
+            document.getElementById('segundos').innerText = String(s).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        var player, isPlaying = false;
+        function onYouTubeIframeAPIReady() { player = new YT.Player('youtube-player', { height: '0', width: '0', videoId: youtubeVideoId, playerVars: { 'autoplay': 1, 'loop': 1, 'playlist': youtubeVideoId }, events: { 'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange } }); }
+        function onPlayerReady(event) { }
+        function onPlayerStateChange(event) {
+            isPlaying = event.data === YT.PlayerState.PLAYING;
+            document.getElementById('play-icon').classList.toggle('hidden', isPlaying);
+            document.getElementById('pause-icon').classList.toggle('hidden', !isPlaying);
+        }
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        playPauseBtn.addEventListener('click', () => {
+            if (isPlaying) { player.pauseVideo(); }
+            else { player.playVideo(); }
+        });
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        const heartsContainer = document.getElementById('hearts-container');
+        const emojis = ['🦭', '💕', '🦭', '✨', '💜'];
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('absolute', 'text-2xl');
+            heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animation = `fall ${Math.random() * 5 + 5}s linear forwards`;
+            heart.style.opacity = Math.random();
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        const fallAnimation = `@keyframes fall { from { transform: translateY(0); } to { transform: translateY(110vh); } }`;
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = fallAnimation;
+        document.head.appendChild(styleSheet);
+        setInterval(createHeart, 300);
+
+        // --- SCRIPT DO CALENDÁRIO ---
+        const calendarView = document.getElementById('calendar-view');
+        const openCalendarBtn = document.getElementById('open-calendar-btn');
+        const closeCalendarBtn = document.getElementById('close-calendar-btn');
+        const prevMonthBtn = document.getElementById('prev-month-btn');
+        const nextMonthBtn = document.getElementById('next-month-btn');
+        const calendarGrid = document.getElementById('calendar-grid');
+        const monthSelect = document.getElementById('month-select');
+        const yearSelect = document.getElementById('year-select');
+        const memoryModal = document.getElementById('memory-modal');
+        const closeMemoryBtn = document.getElementById('close-memory-btn');
+        let currentDate = new Date(2024, 8, 1);
+        const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+        function populateSelectors() {
+            monthSelect.innerHTML = '';
+            monthNames.forEach((name, index) => {
+                const option = new Option(name, index);
+                monthSelect.add(option);
+            });
+            yearSelect.innerHTML = '';
+            const startYear = startDate.getFullYear();
+            const endYear = new Date().getFullYear() + 5;
+            for (let i = startYear - 5; i <= endYear; i++) {
+                const option = new Option(i, i);
+                yearSelect.add(option);
+            }
+        }
+        function renderCalendar(year, month) {
+            calendarGrid.innerHTML = '';
+            monthSelect.value = month;
+            yearSelect.value = year;
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            for (let i = 0; i < firstDay; i++) {
+                calendarGrid.insertAdjacentHTML('beforeend', '<div></div>');
+            }
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                const hasMemory = memories[dateStr];
+                let dayClasses = 'relative h-11 w-11 mx-auto rounded-full flex items-center justify-center cursor-pointer hover:bg-zinc-700/50 transition-all duration-200';
+                let dayStyle = '';
+                if (hasMemory) {
+                    dayClasses += ' ring-2 ring-offset-2 ring-offset-black/50 ring-red-500 bg-cover bg-center';
+                    dayStyle = `style="background-image: url('${hasMemory.image}');"`;
+                }
+                const dayNumberStyle = hasMemory ? 'style="text-shadow: 0 0 5px black;"' : '';
+                const dayEl = `<div class="${dayClasses}" data-date="${dateStr}" ${dayStyle}><div class="absolute inset-0 flex items-center justify-center text-base font-bold text-neutral-100" ${dayNumberStyle}>${day}</div></div>`;
+                calendarGrid.insertAdjacentHTML('beforeend', dayEl);
+            }
+        }
+        openCalendarBtn.addEventListener('click', () => calendarView.classList.remove('hidden'));
+        closeCalendarBtn.addEventListener('click', () => calendarView.classList.add('hidden'));
+        const updateCalendarFromSelectors = () => {
+            currentDate = new Date(yearSelect.value, monthSelect.value, 1);
+            renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+        };
+        monthSelect.addEventListener('change', updateCalendarFromSelectors);
+        yearSelect.addEventListener('change', updateCalendarFromSelectors);
+        prevMonthBtn.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+        });
+        nextMonthBtn.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+        });
+        calendarGrid.addEventListener('click', (e) => {
+            const dayElement = e.target.closest('[data-date]');
+            if (dayElement && memories[dayElement.dataset.date]) {
+                const memory = memories[dayElement.dataset.date];
+                const dateStr = dayElement.dataset.date;
+                const dateParts = dateStr.split('-');
+                const memoryDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+                document.getElementById('memory-title').textContent = memory.title;
+                document.getElementById('memory-date').textContent = memoryDate.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+                document.getElementById('memory-description').textContent = memory.description;
+                document.getElementById('memory-image').src = memory.image;
+                memoryModal.classList.remove('hidden');
+            }
+        });
+        closeMemoryBtn.addEventListener('click', () => memoryModal.classList.add('hidden'));
+        populateSelectors();
+        renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+
+        // --- SCRIPT DO POP-UP INICIAL ---
+        const initialPopup = document.getElementById('initial-popup');
+        const openButton = document.getElementById('open-button');
+        const mainPage = document.getElementById('main-page');
+        const musicPlayer = document.getElementById('music-player');
+
+        openButton.addEventListener('click', () => {
+            // Esconde o pop-up
+            initialPopup.classList.add('hidden');
+
+            // Mostra o conteúdo principal e o player de música
+            mainPage.classList.remove('hidden');
+            musicPlayer.classList.remove('hidden');
+
+            // Inicia a música do YouTube (se o player estiver pronto)
+            if (player && typeof player.playVideo === 'function') {
+                player.playVideo();
+            }
+        });
+    </script>
+</body>
+
+</html>
